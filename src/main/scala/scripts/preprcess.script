@@ -1,0 +1,9 @@
+1, extract zip xml file  -> ra duoc rawFolder
+2, remove two first lines of all files in this folder
+3, merger file (using Preprocess)
+4, split file (twice times)
+first time break merged folder -> 7 folder (chunkSizeLv1)
+(Cd vao merged file, chay split folder lv 1.sh)
+second, split 7 folders -> 417 each.
+(Em vao tung folder de chay lenh split_foder_lv2.sh, hoac cung co the viet lai file nay cho no chay tu dong)
+5, run ParseAndSave.
