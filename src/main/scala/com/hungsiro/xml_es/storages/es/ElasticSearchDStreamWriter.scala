@@ -37,7 +37,7 @@ class ElasticSearchDStreamWriter[T: ClassTag](@transient private val dstream: DS
     val indexPrefixName  = storageConfig.getOrElse("indexPrefix", defaultIndexName)
 
     val `typeName`       = storageConfig.getOrElse("type",defaultTypeName)
-    dstream.foreachRDD{ 
+    dstream.foreachRDD{
       rdd =>
         if(rdd.count() > 0) {
           //val indexName  = (indexPrefixName + "-" + org.joda.time.DateTime.now().toString("yyyy-MM-dd"))
