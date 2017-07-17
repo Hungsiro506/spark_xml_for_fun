@@ -44,21 +44,7 @@ object ParserBoacast {
 }
 */
 
-object ParserBoacast {
 
-  @volatile private var instance: Broadcast[ConnLogParser] = null
-
-  def getInstance(sc: SparkContext,parser: ConnLogParser): Broadcast[ConnLogParser] = {
-    if (instance == null) {
-      synchronized {
-        if (instance == null) {
-          instance = sc.broadcast(parser)
-        }
-      }
-    }
-    instance
-  }
-}
 
 object MapBroadcast {
 
@@ -76,63 +62,5 @@ object MapBroadcast {
   }
 }
 
-object LoadLogBroadcast {
 
-  @volatile private var instance: Broadcast[LoadLogParser] = null
 
-  def getInstance(sc: SparkContext,parser: LoadLogParser): Broadcast[LoadLogParser] = {
-    if (instance == null) {
-      synchronized {
-        if (instance == null) {
-          instance = sc.broadcast(parser)
-        }
-      }
-    }
-    instance
-  }
-}
-object InfParserBroadcast {
-
-  @volatile private var instance: Broadcast[INFLogParser] = null
-
-  def getInstance(sc: SparkContext,parser: INFLogParser): Broadcast[INFLogParser] = {
-    if (instance == null) {
-      synchronized {
-        if (instance == null) {
-          instance = sc.broadcast(parser)
-        }
-      }
-    }
-    instance
-  }
-}
-object NocParserBroadcast {
-
-  @volatile private var instance: Broadcast[NocParser] = null
-
-  def getInstance(sc: SparkContext,parser: NocParser): Broadcast[NocParser] = {
-    if (instance == null) {
-      synchronized {
-        if (instance == null) {
-          instance = sc.broadcast(parser)
-        }
-      }
-    }
-    instance
-  }
-}
-//FIXME : Using this object for all parser.
-object ParserBoadcast {
-  @volatile private var instance: Broadcast[AbtractLogParser] = null
-
-  def getInstance(sc: SparkContext,parser: AbtractLogParser): Broadcast[AbtractLogParser] = {
-    if (instance == null) {
-      synchronized {
-        if (instance == null) {
-          instance = sc.broadcast(parser)
-        }
-      }
-    }
-    instance
-  }
-}

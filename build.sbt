@@ -26,7 +26,8 @@ lazy val root = (project in file("."))
       //"org.elasticsearch" % s"elasticsearch-spark-20_${scalaBuidVersion}" % elasticsearchSparkDriverVersion,
       elasticsearchSparkConnector,
       typesafeConfig,
-      ficus
+      ficus,
+      "joda-time" % "joda-time" % "2.3"
     )
   )
 assemblyMergeStrategy in assembly := {
